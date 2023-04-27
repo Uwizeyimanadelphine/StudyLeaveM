@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+          integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" rel="stylesheet">
+    <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+          integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+          referrerpolicy="no-referrer" rel="stylesheet"/>
+    <link rel="stylesheet" th:href="@{/css/home.css}"/>
+    <script th:src="@{/js/script.js}" type="text/javascript"></script>
+    <title> Index</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-info" style="width: 100%;">
+
+    <a class="navbar-brand" href="#"><img class="nav_img" src="images/logo3.jpg" style="background-color:#007AF3;"/>
+    </a>
+    <h4 style="color: white;">University of Rwanda</h4>
+
+    <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"
+            data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <ul class="navbar-nav ml-auto justify-content-end">
+            <li class="nav-item" th:class="${activePage == 'info'} ? 'nav-item active' : 'nav-item'">
+                <a class="nav-link" style="color: white;" th:href="@{/home}">Home</a>
+            </li>&nbsp;&nbsp;&nbsp;
+            <li class="nav-item" th:class="${activePage == 'notification'} ? 'nav-item active' : 'nav-item'">
+                <a class="nav-link" style="color: white;" th:href="@{/notification}">About</a>
+            </li>&nbsp;&nbsp;&nbsp;
+            <li class="nav-item">
+                <a class="nav-link" href="/department/departments" style="color: white;">Department</a>
+            </li>&nbsp;&nbsp;&nbsp;
+            <div class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle mx-2" data-bs-toggle="dropdown" href="#" role="button"
+                   style="color: white;">
+                    <i class="fa-solid fa-user-circle"></i> <span sec:authentication="principal.username"/>
+                </a>
+                <ul class="mt-3 dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item" th:href="@{/logout}">Logout</a></li>
+                </ul>
+            </div>
+        </ul>
+    </div>
+</nav>
+
+<div class="content">
+    <div class="container-fluid ">
+        <br>
+        <div class="divider" style="height: 15%;"></div>
+        <div class="row">
+            <div class="card border-primary mb-3" style="max-width: 26rem;">
+                <div class="card-header text-center">School of Architecture and the Built Environment - SABE</div>
+                <div class="card-body bg-secondary" style="background: #e3f2fd;">
+                    <h5 class="card-title text-center">Available Departments</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item"><span class="nav-link"><i class="fa-solid fa-circle-check "
+                                                                       style="color:green;"></i>&nbsp;Department of Architecture</span>
+                        </li>
+                        <li class="nav-item"><span class="nav-link"><i class="fa-solid fa-circle-check"
+                                                                       style="color:green;"></i>&nbsp;Department of Construction Management</span>
+                        </li>
+                        <li class="nav-item"><span class="nav-link"><i class="fa-solid fa-circle-check"
+                                                                       style="color:green;"></i>&nbsp;Department of Estate Management and Valuation</span>
+                        </li>
+                        <li class="nav-item"><span class="nav-link"><i class="fa-solid fa-circle-check"
+                                                                       style="color:green;"></i>&nbsp;Department of Geography and Urban Planning</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="card border-secondary mb-3" style="max-width: 26rem;">
+                <div class="card-header text-center">Center of Excellence in Biomedical Engineering - CEBE</div>
+                <div class="card-body bg-secondary">
+                    <h5 class="card-title text-center">Available Departments</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item"><span class="nav-link"><i class="fa-solid fa-circle-check"
+                                                                       style="color:green;"></i>&nbsp; Biomedical Engineering</span>
+                        </li>
+                        <li class="nav-item"><span class="nav-link"><i class="fa-solid fa-circle-check"
+                                                                       style="color:green;"></i>&nbsp; Health Informatics</span>
+                        </li>
+                        <li class="nav-item"><span class="nav-link"><i class="fa-solid fa-circle-check"
+                                                                       style="color:green;"></i>&nbsp;Department of</span>
+                        </li>
+                        <li class="nav-item"><span class="nav-link"><i class="fa-solid fa-circle-check"
+                                                                       style="color:green;"></i>&nbsp;Department of Electrical and Electronics Engineering of Geography </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="card border-secondary mb-3" style="max-width: 26rem;">
+                <div class="card-header text-center">School of Information and Communication Technology-SoICT</div>
+                <div class="card-body bg-secondary">
+                    <h5 class="card-title text-center"> Available Departments</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item"><span class="nav-link"><i class="fa-solid fa-circle-check"
+                                                                       style="color:green;"></i>&nbsp; Biomedical Engineering</span>
+                        </li>
+                        <li class="nav-item"><span class="nav-link"><i class="fa-solid fa-circle-check"
+                                                                       style="color:green;"></i>&nbsp; Health Informatics</span>
+                        </li>
+                        <li class="nav-item"><span class="nav-link"><i class="fa-solid fa-circle-check"
+                                                                       style="color:green;"></i>&nbsp;Department of</span>
+                        </li>
+                        <li class="nav-item"><span class="nav-link"><i class="fa-solid fa-circle-check"
+                                                                       style="color:green;"></i>&nbsp;Department of Electrical and Electronics Engineering of Geography </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="divider"></div>
+
+
+            <br>
+            <div class="divider" style="height: 5%;"></div>
+            <div class="card border-info mb-3" style="max-width: 26rem;">
+                <div class="card-header text-center">School of Engineering-SoE</div>
+                <div class="card-body bg-secondary">
+                    <h5 class="card-title text-center"> Available Departments</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item"><span class="nav-link" href="#"><i class="fa-solid fa-circle-check"
+                                                                                style="color:green;"></i>&nbsp; Department of Civil, Environmental and Geomatic Engineering</span>
+                        </li>
+                        <li class="nav-item"><span class="nav-link" href="#"><i class="fa-solid fa-circle-check"
+                                                                                style="color:green;"></i>&nbsp; Department of MEE</span>
+                        </li>
+                        <li class="nav-item"><span class="nav-link" href="#"><i class="fa-solid fa-circle-check"
+                                                                                style="color:green;"></i>&nbsp;Department of</span>
+                        </li>
+                        <li class="nav-item"><span class="nav-link card-text"><i class="fa-solid fa-circle-check"
+                                                                                 style="color:green;"></i>&nbsp;Department of Electrical and Electronics Engineering of Geography </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="card border-primary mb-3" style="max-width: 26rem;">
+                <div class="card-header text-center">School of Mining and Geology - SMG</div>
+                <div class="card-body bg-secondary">
+                    <h5 class="card-title">Available Departments</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item"><span class="nav-link"><i class="fa-solid fa-circle-check"
+                                                                       style="color:green;"></i>&nbsp; Biomedical Engineering</span>
+                        </li>
+                        <li class="nav-item"><span class="nav-link"><i class="fa-solid fa-circle-check"
+                                                                       style="color:green;"></i>&nbsp; Health Informatics</span>
+                        </li>
+                        <li class="nav-item"><span class="nav-link"><i class="fa-solid fa-circle-check"
+                                                                       style="color:green;"></i>&nbsp;Department of</span>
+                        </li>
+                        <li class="nav-item"><span class="nav-link"><i class="fa-solid fa-circle-check"
+                                                                       style="color:green;"></i>&nbsp;Department of Electrical and Electronics Engineering of Geography </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="card border-secondary mb-3" style="max-width: 26rem;">
+                <div class="card-header text-center">School of Science - SoS</div>
+                <div class="card-body bg-secondary">
+                    <h5 class="card-title text-center">Available Departments</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item"><span class="nav-link"><i class="fa-solid fa-circle-check"
+                                                                       style="color:green;"></i>&nbsp; Biomedical Engineering</span>
+                        </li>
+                        <li class="nav-item"><span class="nav-link"><i class="fa-solid fa-circle-check"
+                                                                       style="color:green;"></i>&nbsp; Health Informatics</span>
+                        </li>
+                        <li class="nav-item"><span class="nav-link"><i class="fa-solid fa-circle-check"
+                                                                       style="color:green;"></i>&nbsp;Department of</span>
+                        </li>
+                        <li class="nav-item"><span class="nav-link"><i class="fa-solid fa-circle-check"
+                                                                       style="color:green;"></i>&nbsp;Department of Electrical and Electronics Engineering of Geography </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="divider" style="height: 5%;"></div>
+    </div>
+</div>
+
+<script crossorigin="anonymous"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<div style="background: #e3f2fd; width: 100%; height: 10%;">
+    <ul class="nav justify-content-center">
+        <li class="nav-item">
+            <a class="nav-link active" th:href="@{/home}">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/department/departments">Departments</a>
+        </li>
+
+    </ul>
+</div>
+<footer class="footer mb-auto py-3 bg-dark" th:fragment="footer">
+    <div style="margin-left: 45%">
+        <span class="text-muted mb-0"> <i class="fa-regular fa-copyright"></i> 2023 Employees Leave System</span>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script>
+var d1 = document.getElementById("d1").value;
+var d2 = document.getElementById("d1").value;
+const dateOne = new Date(d1);
+const dateTwo = new Date(d2);
+const time = Math.abs(dateTwo - dateOne);
+const days = Math.ceil(time / (1000 * 60 * 60 * 24));
+document.getElementById("output").innerHTML=days;
+
+</script>
+
+
+</body>
+</html>

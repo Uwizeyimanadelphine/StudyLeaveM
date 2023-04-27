@@ -1,0 +1,95 @@
+body{
+background: #FFFFFF !important;
+
+}
+.big-primary{
+background: #20272E !important;
+}
+.banner{
+width: 100%;
+height: 93vh;
+background: linear-gradient(rgba(0, 0, 0, .8), rgba(0, 0, 0, .8)), url(../img/banner.jpg);
+background-size: cover;
+color: white;
+}
+
+.my-card{
+padding: 20px;
+background: #FFFFFF;
+}
+.#login .container #login-row #login-column #login-box{
+margin-top: 120px;
+max-width:600px;
+height: 420px;
+border: 1px solid #9C9C9C;
+background-color: white;
+}
+.#login .container #login-row #login-column #login-box #login-form
+{
+padding: 20px;
+}
+.#login .container #login-row #login-column #login-box #login-form #register-link
+{
+ margin-top: -85px;
+}
+
+
+
+
+.sidebar{
+width: 18%;
+background: #e2e2e2;
+height: 100vh;
+position: absolute;
+padding-top: 45px;
+}
+
+.sidebar h4{
+width: 100%;
+padding: 10px 25px;
+color: black;
+}
+
+.sidebar a{
+display: block;
+width: 100%;
+padding: 10px 25px;
+text-decoration: none;
+color: black;
+}
+.sidebar a:hover{
+background: white;
+}
+.sidebar a:active{
+color: #e3f2fd;
+}
+.nav_img{
+width: 110px;
+height: 60px;
+left: 10px;
+top: 0%;
+background: blue;
+left:0px;
+}
+.row .divider {
+height: .81px;
+width: 2%;
+align: center;
+background: white;
+margin-top: 10px;
+}
+
+.content {
+ margin-left: 8%;
+ }
+.cards{
+
+}
+
+ .footer {
+width:100%;
+
+ position: absolute;
+ margin-bottom: 0%;
+color: white;
+ }

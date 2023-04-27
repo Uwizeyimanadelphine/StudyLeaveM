@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/login.css}" type="text/css">
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+          integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" rel="stylesheet">
+    <title>Department Page</title>
+</head>
+<body>
+<div class="container">
+    <div class="container-fluid text-center">
+        <h1>Add Department</h1>
+        <hr/>
+        <br>
+        <form action="#" method="post" style="max-width: 600px; margin: 0 auto;" th:action="@{/department/save_dep}"
+              th:object="${department}">
+            <div th:if="${param.success}">
+                <div class="alert alert-info">
+                    Added successful !!!
+                </div>
+            </div>
+            <div class="m-3">
+                <div class="form-group row">
+                    <label class="col-form-label col-4">Department Name</label>
+                    <div class="col-8">
+                        <input class="form-control" required th:field="*{departmentName}" type="text"/>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-form-label col-4">School</label>
+                    <div class="col-8">
+                        <select class="form-control" th:field="*{school}">
+                            <option class="form-control" th:text="ICT" th:value="'ICT'"></option>
+                            <option th:text="Engineering" th:value="'Engineering'"></option>
+                            <option th:text="Science" th:value="'Science'"></option>
+                            <option th:text="SABE" th:value="'SABE'"></option>
+                        </select>
+
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-form-label col-4">Head of Department</label>
+                    <div class="col-8">
+                        <input class="form-control" required th:field="*{hod}" type="text"/>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <a class="item btn ml-3" href="/department/departments" style="background-color: #e3f2fd;">Back</a>
+                    <div class=" ml-auto">
+                        <button class="btn btn-info" type="submit">Save</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <hr>
+    </div>
+</div>
+</body>
+</html>

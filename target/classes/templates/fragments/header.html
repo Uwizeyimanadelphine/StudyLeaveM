@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Spring MVC</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-info" th:fragment="header" style="width: 100%;">
+
+  <a class="navbar-brand" href="#"></a>
+    <h4 style="color: white;">University of Rwanda</h4>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/home}" style="color: white;"> <i class="fa-solid fa-house"></i>&nbsp;Home </a>
+      </li>&nbsp;&nbsp;&nbsp;
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/home}" style="color: white;"> About</a>
+      </li>&nbsp;&nbsp;&nbsp;
+      <li class="nav-item" th:class="${activePage == 'notification'} ? 'nav-item active' : 'nav-item'">
+        <a class="nav-link" href="#" style="color: white;"><i class="fa-regular fa-bell"></i><sup >&plus;<span th:text="${@test.leaveRows()}"></span></sup></a>
+      </li>&nbsp;&nbsp;&nbsp;
+      <li class="nav-item" th:class="${activePage == 'notification'} ? 'nav-item active' : 'nav-item'">
+        <a class="nav-link" href="#" style="color: white;"><i class="fa-solid fa-user-circle"></i> <span sec:authentication="principal.username"/></a>
+      </li>
+
+    </ul>
+  </div>
+</nav>
+</body>
+</html>
